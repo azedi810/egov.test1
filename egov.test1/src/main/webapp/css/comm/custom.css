@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: custom.css
+* Author: Fu:z, yj84
+------------------------------------------ */
+
+/* ------------------------------
+Colorset
+------------------------------ */
+.strong { color: #0798d4; }
+.em { color: #f37f02; }
+
+
+
+/* ------------------------------
+지원서 작성 - 자격선택
+------------------------------ */
+div.choose-options { }
+div.choose-options div.section { margin: 0 0 15px; padding: 0 20px; }
+div.choose-options ul { overflow: hidden; width: 100%; margin: 0; padding: 0; list-style: none; }
+div.choose-options li { float: left; width: 30%; margin: 5px 0; }
+div.choose-options div.last li { float: none; width: 100%; }
+div.choose-options div.buttons { padding: 25px 0 0; border-top: 1px solid #e1a6b9; text-align: center; }
+
+/* ------------------------------
+01. 지원서 작성
+------------------------------ */
+div.application {  }
+div.application div.addr {  }
+div.application div.addr input.txt { margin: 2px 0; }
+div.application div.high-school { position: relative; zoom:1; }
+div.application div.high-school input.txt { margin: 2px 0; }
+div.application div.high-school span.checkbx { position: absolute; right: 0; top: 3px; }
+div.application div.disabled-state { display: inline-block; *display:inline; *zoom:1; margin: 0 0 5px; }
+div.application div.disabled-state label { display: inline-block; margin-left: 10px; font-weight: bold; }
+div.application div.disabled-state select { width: ; vertical-align: middle; }
+div.application div.disabled-state input.txt { }
+div.application td.reason span.checkbx { width: 30%; margin: 2px 0; }
+div.application div.upload-pic { overflow: hidden; *zoom:1; }
+div.application div.upload-pic div.pic  { float: left; margin-right: 10px; padding: 4px; border: 1px solid #dad2d1; }
+div.application div.upload-pic div.body { float: left; width: 480px; }
+div.application div.upload-pic div.body ul { margin: 5px 0; }
+
+/* ------------------------------
+02. 전형료결제
+------------------------------ */
+div.apply-check { height: 128px; border: 1px solid #dadada; background: url("/images/egovframework/fund//common/bg_apply_check.gif") no-repeat right top; }
+div.apply-check p { position: relative; margin: 40px 0 -35px; padding: 0 0 0 40px; font-family: 'NanumGothic', '나눔고딕', ngeot, ngbeot, dotum, sans-serif; font-size: 20px; }
+
+/* 로그인 */
+div.login-box { position: relative; *zoom:1; min-height: 200px; height: auto !important; _height: 200px; margin: 60px 0 0; }
+div.login-box div.login { width:700px; height:240px; background: url("/images/egovframework/fund/custom/bg_login.gif") no-repeat left top; padding:55px 0 0 300px; }
+div.login-box div.login ul { margin: 0; padding: 0; }
+div.login-box div.login ul li {list-style:none;}
+div.login-box div.login ul li { margin: 5px 0; list-style: none; }
+div.login-box div.login ul li * { vertical-align: middle; }
+div.login-box div.login ul li input { width: 173px; }
+div.login-box div.login ul li.in { margin-top:-22px; margin-left:60px;}
+div.login-box div.login ul li.txt img { padding-top:8px;}
+div.login-box div.login div.btn {margin:-55px 0 0 242px; }
+div.login-box div.login p {margin-top:25px; font-size:11px; color:#b2b2b2;}

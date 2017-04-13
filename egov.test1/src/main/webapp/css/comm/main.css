@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: main.css
+* Description: 메인스타일
+* Author: Fu:z, yj84
+------------------------------------------ */
+
+
+/* ------------------------------------------
+Main
+------------------------------------------ */
+body.main #aside, body.main #scrumb { display: none; }
+body.main #container { }
+body.main #container div.wrapper { position: relative; width: 960px; padding:0px; background:none; }
+body.main #contents { float:none; position:absolute; top:-215px; left:-5px; width:970px; height:215px; background:url("/images/egovframework/fund//main/bg_contents.png") no-repeat left top; }
+body.main #contents #inner { padding-top:33px; padding-left:35px; }
+
+/* 메인 비주얼 */
+body.main div.visual { height:552px; background: url("/images/egovframework/fund//main/@visual.jpg") no-repeat center top; }
+
+/* 공통요소 */
+#contents h2 { height: 20px; margin: 0; }
+div.row { clear: both; overflow: hidden; width: 530px; }
+div.col { position: absolute; right: 0; top: -275px; width: 340px; padding: 0 30px; background: url("/images/egovframework/fund//main/bg_col.gif") no-repeat left top; }
+a.more { position: absolute; right: 0; top: 0; padding: 5px; }
+div.front-bbs {  }
+div.front-bbs h3 { position: relative; z-index: 1; float: left; margin: 0 1px 0 0; }
+div.front-bbs h3 a { padding-left: 20px; color: #fff; font-size: 11px; font-weight: normal; text-align: center; }
+div.front-bbs h3 a, 
+div.front-bbs h3 a span { display: inline-block; height: 21px; line-height: 21px; background: url("/images/egovframework/fund//main/bg_tab.gif") no-repeat left top; }
+div.front-bbs h3 a span { padding-right: 20px; background-position: right top; color: #585858; } 
+div.front-bbs h3 a.current { background-position: left bottom; }
+div.front-bbs h3 a.current span { padding-right: 25px; background-position: right bottom; color: #fff; }
+div.front-bbs div.cont { position: absolute; left: 0; top: 20px; width: 100%; padding: 10px 0 0; border-top: 1px solid #dfe0e1; }
+ul.flist { margin: 0; padding: 0; list-style: none; }
+ul.flist li { position: relative; *zoom:1; height: 21px; line-height: 21px; padding-left: 10px; background: url("/images/egovframework/fund//main/ding_a.gif") no-repeat left 8px; }
+ul.flist li a { display: ; color: #888; }
+ul.flist li a:hover { color: #5d5c5c; text-decoration: underline; }
+ul.flist li span { position: absolute; right: 0; top: 2px; font-size: 95%; color: #999; }
+
+/* 학과공지 */
+div.notify { float:left; width:440px; margin-left:30px; position: relative; z-index:0; height: 225px; }
+div.notify a.more { top: -20px; }
+
+/* 자료실 */
+div.data { position: relative; height: 170px; margin: 0; }
+div.data a.more { top: -20px; }
+
+/* schedule */
+div.schedule { float: left; width: 200px; height: 180px; }
+div.schedule div.head { height: 20px; margin: -20px 0 0; text-align: right; }
+div.schedule div.head strong { padding: 0 10px; }
+div.schedule div.head span { color: #096e4f; }
+div.schedule div.inner { padding: 7px 15px; border: 1px solid #dcdcdc; border-top: 2px solid #7c7c7c; background:#fff; }
+div.schedule table { width: 100%; }
+div.schedule table th { border-bottom: 1px solid #e2e2e2; }
+div.schedule table td { font-size: 95%; text-align: center; }
+div.schedule .sun,
+div.schedule .sun a { color: #c30443; }
+div.schedule .sat,
+div.schedule .sat a { color: #1278cc; }
+div.schedule td div { position: absolute; z-index:5; width: ; padding: 5px 10px; border:1px solid #bbd1c5; background-color: #ecf5f0;}
+div.schedule td div strong { display: block; padding-left: 15px; background: url("/images/egovframework/fund//main/ico_schedule.gif") no-repeat left top; font-weight: normal; }
+div.schedule td div span.arrw { display: inline-block; position: absolute; left: 10px; top: -5px; width: 7px; height: 5px; background: url("/images/egovframework/fund//main/arrw.gif") no-repeat left top; }
+
+ /* lservice */
+ div.lservice { overflow: hidden; float:left; margin-left:30px; width:225px; height: 180px; }
+ div.lservice h2 { height: 24px; }
+ div.lservice ul { overflow: hidden; *zoom: 1; margin: 0; padding:0px; list-style: none; }
+ div.lservice li { float: left; width:70px; height:70px; margin: 0; font-size: 0px; line-height: 0; }

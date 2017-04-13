@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: popup.css
+* Description: 팝업
+------------------------------------------ */
+/* ------------------------------
+popup Page
+------------------------------ */
+body.popup { overflow: none; background: none; }
+
+/* ------------------------------
+Layer popup
+------------------------------ */
+div.popup { position: absolute; z-index: 100; top: 300px; left: 50%; margin-left: -175px; width: 350px; background: #fff; border: solid 2px #C72C5D; text-align: center; }
+div.popup div.buttons { position: absolute; right: 0px; }
+
+
+
+
+/* ------------------------------
+popup Window
+------------------------------ */
+/* 레이아웃 */
+body.popup,
+body.popup * {
+	scrollbar-face-color: #eee;
+	scrollbar-track-color: #fff;
+	scrollbar-highlight-color: #f8f8f8;
+	scrollbar-3dlight-color: #C2C2C2;
+	scrollbar-shadow-color: #F8f8f8;
+	scrollbar-darkshadow-color: #C2C2C2;
+	scrollbar-arrow-color: #333;
+}
+
+body.popup #head { height: 48px; min-height: auto; background: #fff url('/images/egovframework/fund/popup/bg_head.gif') left top repeat; overflow: hidden; }
+body.popup #foot { height: 53px; background: #fff url('/images/egovframework/fund/popup/bg_foot.gif') right bottom no-repeat; }
+body.popup #contain { clear: both; overflow: auto; overflow-x: hidden; background: #fff; }
+body.popup #wrap { width: auto; margin: 35px 20px 20px; }
+
+body.popup #head { background: #00733f;}
+body.popup #head h1 { float: left; margin: 0px; padding: 0 0 0 20px; line-height: 48px; font-size: 16px; color: #fff; font-family: 'NanumGothic', '나눔고딕', ngeot, ngbeot, dotum, sans-serif; }
+body.popup #head h1 img {  }
+body.popup #head div.close { float: right; }
+body.popup #head div.close a { display: inline-block; }
+
+body.popup #foot { text-align: center; }
+
+
+/* 우편번호 검색 */
+div.post-search { }
+div.post-search p { margin: 0; color: #666; }
+div.post-search p em { display: block; font-style: normal; color: #888; font-size: 95%; line-height: 1.6; }
+div.post-search div.inner { margin: 18px 0 25px; padding: 20px 0 15px; border: 1px solid #dedede; background-color: #f9f8f8; text-align: center; }
+div.post-search input.txt { width: 125px; height: 16px; border: 1px solid #ccc; }
+div.post-search input { vertical-align: middle; }
+p.result-info { margin: 0 0 15px; color: #ee4c3a; }
+div.post-result { border: 1px solid #dedede; background-color: #f9f8f8; }
+div.post-result ul { position: relative; overflow-y: scroll; height: 105px; margin: 0; padding: 15px; }
+div.post-result li { position: relative; zoom:1; list-style: none; line-height: 1.6; }
+div.post-result li span { position: absolute; right: 0; top: 0; }
+
+/* 비밀번호찾기 */
+div.findpw { margin: 8px 0 0; }
+div.findpw div.inner { overflow: hidden; position: relative; *zoom:1; padding: 15px 20px; border: 1px solid #dedede; background-color: #f9f8f8; }
+div.findpw ul { float:left; margin: 0; padding: 0; }
+div.findpw li { margin: 5px 0; list-style: none; }
+div.findpw li strong.ding-c { display: inline-block; width: 80px; font-weight: normal; }
+div.findpw li input.txt   { width: 160px; }
+div.findpw li input.short { width: 72px; }
+div.findpw input.image { float: right; margin: 5px 0 0; }
+div.findpw-result {  }
+div.findpw-result p { margin: 0 0 40px; padding: 30px 0; border: 1px solid #dedede; background-color: #f9f8f8; text-align: center; }
+div.findpw-result p strong { color: #333; }
+div.findpw-result p em { font-weight: bold; }
+div.findpw-result div.center {  }

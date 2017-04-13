@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: sub.css
+* Description: 서브스타일
+------------------------------------------ */
+
+/* ------------------------------------------
+Layout
+------------------------------------------ */
+html { height: 100%; }
+body { height: 100%; color: #666; background: url("/images/egovframework/fund//common/bg.gif") repeat-x left top; }
+body#sub-content {  background: white; }
+#wrap:after { content: ""; display: block; clear: both; }
+#header { width: 100%; }
+#container { width: 100%; padding: 0; margin-top:35px;}
+#container div.wrapper { *zoom: 1; width: 1000px; margin: 0 auto; padding-bottom:50px; /* background: url("/images/egovframework/fund//common/bg_wrapper.gif") repeat-y left top;*/ }
+#container div.wrapper:after { content: ""; display: block; clear: both; }
+#aside { float: left; width:198px; }
+#contents { float: right; width: 780px; padding: 0; }
+#footer { clear: both; width: 100%; margin: 0; padding: 0; border-top: 1px solid #dadada; background-color: #f3f3f3; }
+
+/*
+#skyscrapper { position: absolute; left: 50%; top: 420px; height:120px; margin-left:500px; padding:50px 0 0; background: url("/images/egovframework/fund//common/bg_skyscrapper.gif") no-repeat left top; }
+div.visual { width:100%; text-align:center; background: url("/images/egovframework/fund//common/bg_visual.gif") repeat-x left top; text-align: center; }
+div.visual img { margin:0px auto; }
+*/
+
+/* header */
+#header div.wrapper { position: relative; width: 1000px; height: 97px; margin: 0 auto; padding: 0; }
+#logo { height: 40px; padding: 28px 0 0 0; }
+#util { position: absolute; right:  -5px; top: 7px; }
+#util p span { font-weight:bold; color:#00733f; }
+#util p img {vertical-align:middle;}
+
+
+/* gnb */
+#gnb { position: absolute; right: 0; top: 55px; width: 70%; margin: 0; }
+#gnb ul { margin: 0; padding: 0; list-style: none; text-align: right; }
+#gnb ul { position: relative; z-index: 2; margin: 0 auto; padding: 0; list-style: none; }
+#gnb ul li { display: inline-block; *display: inline; *zoom: 1; padding: 0; margin-left:2px; }
+#gnb ul li a { display: inline-block; height: 16px; padding: 11px 20px; color: #333; font-size: 14px; font-weight: bold; text-align: center; }
+#gnb ul li a:hover { text-decoration: none; background-color:#006535; color:#fff; border:1px solid #012b18;  border-bottom:none;}
+#gnb ul li.current a { text-decoration: none; background-color:#006535; color:#fff; border:1px solid #012b18;  border-bottom:none;}
+
+/* aside */
+#aside * { margin: 0; padding: 0; list-style: none; }
+#aside h2 { height: 50px;background:url("/images/egovframework/fund//common/bg_aside_h2.gif") no-repeat left top; color:#fff; font-size:17px;  padding:30px 0 0 15px;  }
+h2.lnb-title { height: 50px;background:url("/images/egovframework/fund//common/bg_aside_h2.gif") no-repeat left top; color:#fff; font-size:17px;  padding:30px 0 0 15px;   }
+
+#lnb { margin: 5px 0 30px; padding: 0; }
+#lnb ul { margin: 0 1px; }
+#lnb ul li { *zoom: 1; margin: 0; padding: 0; border-bottom:1px #dbdbdd solid;   }
+#lnb ul li a { display: block; padding-left:30px; line-height: 30px; overflow: hidden; color: #54565a; text-decoration: none; }
+#lnb ul li a.d1 { margin: 0 0 2px; background:url("/images/egovframework/fund//common/lnb_d1_off.gif") no-repeat 185px 45%; font-weight: bold; }
+
+#lnb ul li a:hover { color:#196939; background-image:url("/images/egovframework/fund//common/lnb_d1_on.gif"); } 
+#lnb ul li.d1-current a.d1 { color:#196939; background-image:url("/images/egovframework/fund//common/lnb_d1_on.gif"); } 
+
+
+#lnb ul li.d1-current ol { margin: 0; padding:10px 0 0 30px; width:165px; border-top:1px #dbdbdd solid; background:#efefef; }
+
+
+
+#lnb ul li.d1-current li { color: #828282; }
+#lnb ul li.d1-current li a { padding-left:10px; color: #828282; font-weight: normal; letter-spacing: 0; line-height: 15px; background:url("/images/egovframework/fund//common/lnb_d2_off.gif") no-repeat left 45%; }
+
+
+#lnb ul ol { display: none; width: 100%; margin: 0; padding: 0 0 5px; }
+
+
+
+#lnb ul li li { line-height: 20px; border: none; }
+
+#lnb ul li li a { height: 20px; background: url("/images/egovframework/fund//common/lnb_d3_off.gif") no-repeat left 5px !important; color: #999; }
+#lnb ul li a.d2 { padding-left: 30px; } 
+#lnb ul li li.d2-current,
+#lnb ul li li.d2-current a { background:url("/images/egovframework/fund//common/lnb_d3_on.gif") no-repeat left 5px; color: #196939; }
+
+
+/* contents */
+#inner { padding: 0; line-height: 1.4; }
+#print { margin: 10px 0 0; text-align: right; }
+
+/* footer */
+#footer { text-align: center; border-top:1px #cecece solid; background:#fff; }
+#footer * { margin: 0px; padding: 0px; list-style: none; font-style: normal; }
+#footer div.wrapper { overflow: hidden; position: relative; width: 960px; height: 80px; margin: 0 auto; padding: 20px 0 0; text-align: left; color: #888; font-size: 95%; }
+#footer ul.quicklaunch { overflow: hidden; width: 80%; } 
+#footer ul.quicklaunch li { float: left; margin: 0 11px 0 -11px; background:url("/images/egovframework/fund//common/bg_quicklaunch.gif") no-repeat left 45%; }
+#footer ul.quicklaunch li a { display: inline-block; padding: 5px 10px; }
+#footer div.logo { position: absolute; right: 0; top: 25px; }
+#footer div.logo img { margin-top: 8px; }
+#footer address { display: block; margin: 10px 0 0; }
+#footer p.copyrights { clear: both; }
+
+
+
+/* ------------------------------------------
+Print
+------------------------------------------ */
+@media print {
+	#header, #footer, #aside, #quick, .skip_nav, h2.title { display: none; }
+	#wrap { width:100%; margin: 0; padding: 0; background: none; }
+	#container { overflow: visible !important; width: 100% !important; margin: 0; padding: 0; }
+	#contents  { overflow: visible !important; float: none !important; width: 100% !important; height: 100%; margin: 0; }
+}

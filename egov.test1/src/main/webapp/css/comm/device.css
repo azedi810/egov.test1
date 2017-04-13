@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: device.css
+* Description: 휴대장치등 기기별 미디어 쿼리 스타일링
+* Author: Fu:z
+------------------------------------------ */
+@media screen {
+
+	#skipToContent,
+	.reader { position: absolute; left: -1000%; top: 0px; width: 1px; heght: 1px; font-size: 0px; line-height: 0px; overflow: hidden; }
+	legend,
+	caption { display: none; }
+
+}
+
+@media print {
+	body { background: #fff; color: #000; }
+	#header, #aside, #footer, .reader { display: none; }
+	caption { display: none; }
+}
+
+
+/* mobile */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	* { -webkit-text-size-adjust: none; }
+	input[type="text"] { -webkit-appearance: none; -webkit-border-radius: 0px;}
+	input:checked[type="checkbox"] { background-color: #fff; -webkit-appearance: checkbox; }
+}
+/* landscape */
+@media only screen and (min-width : 321px) {
+
+}
+/* retina */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+
+}
+/* print */
+@media print {
+	body { background: #fff; color: #000; }
+	#header, #side, #footer, .reader { display: none; }
+	caption { display: none; }
+}

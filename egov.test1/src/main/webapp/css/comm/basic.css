@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: fuz.css
+* Description: 퓨즈 퍼블리싱 기본
+* Author: Fu:z
+------------------------------------------ */
+
+@font-face { font-family: 'ngeot'; font-style: normal; font-weight: normal; src: url('font/NanumGothic.eot'); src: local('?'), url('font/NanumGothic.woff') format('woff'), url('font/NanumGothic.ttf') format('truetype'); }
+@font-face { font-family: 'ngbeot'; font-style: normal; font-weight: bold; src: url('font/NanumGothicBold.eot'); src: local('?'), url('font/NanumGothicBold.woff') format('woff'), url('font/NanumGothicBold.ttf') format('truetype'); }
+
+/* ------------------------------
+Default
+------------------------------ */
+html, body { margin: 0px; padding: 0px; width: 100%; height: 100%; color: #666; }
+body, input, select, option, textarea { font-family: '돋움', '돋움체', dotum, AppleGothic, Sans Serif; font-size: 12px; font-weight: normal; } /* 'Malgun Gothic', '맑은 고딕'  */
+img, fieldset { border: 0px; }
+form, fieldset, button { margin: 0px; padding: 0px; }
+legend, caption { display: none; }
+table { empty-cells: show; }
+em { font-style: normal; font-size: 11px; font-weight: normal; }
+
+/* ------------------------------
+Anchor
+------------------------------ */
+a { text-overflow: ellipsis; -o-text-overflow: ellipsis; }
+a:link { color: #666; text-decoration: none; }
+a:visited { color: #666; text-decoration: none; }
+a:hover { color: #666; text-decoration: none; }
+a:active { color: #666; text-decoration: none; }
+a.external { display: inline-block; padding-right: 15px; background: url('/images/egovframework/fund//common/ico_external.gif') right 40% no-repeat; } /* 외부링크 */
+
+/* ------------------------------
+Reset
+------------------------------ */
+.reset, .reset li, .reset dt, .reset dd  { clear: both; margin: 0px; padding: 0px; list-style: none; }
+
+/* ------------------------------
+Form
+$('input[type=text], input[type=password]').addClass('txt');
+$('input[type=file]').addClass('file');
+$('input[type=image]').addClass('image');
+$('input[type=submit]').addClass('button');
+$('input[type=checkbox]').addClass('check');
+$('input[type=radio]').addClass('radio');
+$('textarea').addClass('textarea');
+------------------------------ */
+input.txt, input.file { margin: 0px; padding: 0px; width: 140px; height: 19px; line-height: 19px; font-size: 12px; border: solid 1px #d5d5d5; *vertical-align:middle; }
+input.short { width: 55px; }
+input.num   { width: 25px; }
+input.mid   { width: 40%; }
+input.long  { width: 80%; }
+input.file  { display: inline-block; width: 80%; }
+textarea.textarea { font-size: 12px; border: solid 1px #ddd; }
+html*select { position: relative; top: 1px; } /* for ie6,7 */
+img.ico { vertical-align: middle; }
+
+/* ------------------------------
+Typhography
+------------------------------ */
+small, .small { font-family: '돋움', '돋움체', dotum, AppleGothic, Sans Serif; font-size: 95%; }
+.disabled { color: #aaa; }
+.bold   { font-weight: bold; }
+.normal { font-style: normal; font-weight: normal; }
+strong.strong, .strong { color: #; font-style: normal; font-weight: bold; } 
+strong.em, .em { color: #; font-style: normal; } 
+em.strong { color: #; font-style: normal; } 
+em.em { color: #; font-style: normal; }
+
+/* ------------------------------
+Display
+------------------------------ */
+.hide { display: none; }
+.show { display: block; }
+.toggle { display: none; }
+.toggle-on { display: block; }
+div.show { display: block; }
+table.show { display: table; }
+
+/* ------------------------------
+Align
+------------------------------ */
+.left { text-align: left !important; }
+.center { text-align: center !important; }
+.right { text-align: right !important; }
+
+.clearfix, .clear { clear: both; *zoom:1; }
+.clearfix:after, .clear:after { content: ""; display: block; clear: both; }
+
+.fleft { float: left; }
+.fright { float: right; }
+
+.vtop { vertical-align: top; }
+.vmiddle { vertical-align: middle; }
+.vbottom { vertical-align: bottom; }
+
+.nowrap { white-space: nowrap; }
+.ellipsis { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+
+.pointer { cursor: pointer; }
+.help { cursor: help; }
+
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+
+.relative { clear: both; position: relative; z-index: 2; }
+.absolute { position: absolute; z-index: 3; }
+
+.justify { text-align: justify; }
+
+/* ------------------------------
+Tab
+------------------------------ */
+.tab { margin: 0px; padding: 0px; }
+.tab { *zoom: 1; }
+.tab li { margin: 0px; padding: 0px; list-style: none;  }
+.tab:after { content: " "; display: block; clear: both; height: 0px; visibility: hidden; }
+
+/* ------------------------------
+Decoration
+------------------------------ */
+hr, hr.hr { margin: 5px 0px; padding: 0px; border: 0px; height: 1px; background: #fff; color: #ddd; }
+
+.scrollbar {
+	scrollbar-face-color: #F8F8F8;
+	scrollbar-track-color: #F8F8F8;
+	scrollbar-highlight-color: #f8f8f8;
+	scrollbar-3dlight-color: #C2C2C2;
+	scrollbar-shadow-color: #F8f8f8;
+	scrollbar-darkshadow-color: #C2C2C2;
+	scrollbar-arrow-color: #C2C2C2;
+}
+
+.shadow {
+	box-shadow: 1px 1px 2px #ddd;
+	-moz-box-shadow: 1px 1px 2px #ddd;
+	-webkit-box-shadow: 1px 1px 2px #ddd;
+	filter: progid:DXImageTransform.Microsoft.Shadow('Strength=1, Direction=300, Color=#ddd'); /* For IE 5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.Shadow('Strength=1, Direction=300, Color=#ddd'); /* For IE 8 */
+}
+
+/* ------------------------------
+Lightbox
+------------------------------ */
+#lightbox { display: none; position: absolute; z-index: 2001; width: 300px; height: 300px; background: #fff; text-align: left; font-size: 12px; }
+#lightboxbg {
+	display: none; position: absolute; z-index: 2000; left: 0px; top: 0px; width: 100%; height: 500px; background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    -ms-filter: alpha(opacity=50);
+}
+#lightbox {
+	/*
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	*/
+	box-shadow: 3px 3px 10px #444;
+	-moz-box-shadow: 3px 3px 10px #444;
+	-webkit-box-shadow: 3px 3px 10px #444;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color=#444444); /* For IE 5.5 - 7 */
+	-ms-filter: progid:DXImageTransform.Microsoft.Shadow(Strength=10, Direction=135, Color=#444444); /* For IE 8 */
+}

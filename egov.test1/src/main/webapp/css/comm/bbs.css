@@ -1,0 +1,354 @@
+@charset "utf-8";
+/* ------------------------------------------
+* Filename: bbs.css
+* Description: 게시판 
+------------------------------------------ */
+/* ------------------------------
+공통
+------------------------------ */
+table { empty-cells: show;  border-collapse:collapse;  font-family: NanumGothic,'NanumGothicWeb', dotum, Sans-Serif;}
+table.bbs { text-align:center; width:100%; table-layout:fixed; empty-cells:show;   }
+table.bbs * { vertical-align:middle;}
+table.bbs a { color:#666; }
+table.bbs th,
+table.bbs td { padding:7px 0; font-size:12px; line-height:1.5; font-weight:normal; border-bottom:solid 1px #e2e2e2; text-align: left;  }
+table.bbs th { padding:6px 0; font-weight:bold; font-size:11px;}
+table.bbs th.th-title { border-top:solid 1px #a5a5a5; text-align: left; }
+table.bbs td { padding:5px 0; }
+table.bbs td.center { text-align: center; }
+table.bbs td.left { text-align: left; }
+table.bbs td.right { text-align: right; padding-right: 5px;}
+table.bbs td.writer span a { color: blue;  font-weight: bold; }
+table.bbs span.qa-reply { display:inline-block; padding-right:22px; background:url('/images/egovframework/fund//bbs/reply_icon.gif') no-repeat 100% 50%;}
+table.bbs td.td-bottom-line { border-bottom: 1px solid #008000; }
+table.bbs td.td-bottom-line3 { border-bottom: 3px solid #008000; }
+
+
+/* ------------------------------
+목록
+------------------------------ */
+div.bbs-list { border-top: solid 0px #a5a5a5; border-bottom:1px solid #a5a5a5;}
+div.bbs-list table th {height:20px; text-align: center; border-top:solid 2px #444547; border-bottom:solid 2px #bbbbbb; background:url(/images/egovframework/fund//bbs/bg_th.gif); color:#333}
+div.bbs-list table td { color:#666; height: 20px; }
+div.bbs-list table td.subject { text-align: left; padding-left:0px; padding-right: 5px; }
+div.bbs-list table td { text-align: center; }
+div.bbs-list table td.subject { text-align: left; }
+div.bbs-list table td.right { text-align: right; }
+div.bbs-list table td.subject a { color:#666;}
+div.bbs-list table td.subject a:hover { color:#333;}
+div.bbs-list table tr.answer td.subject a { padding-left:24px; background:url('/images/egovframework/fund//bbs/icon_reply.gif') no-repeat 0 50%;}
+div.bbs-list select.menu { width: 150px; }
+
+p.page-info { margin:15px 0 7px 0; padding:0; color:#555; text-align:left; font-size:11px; float:left; font-family: NanumGothic,'NanumGothicWeb', dotum, Sans-Serif;}
+p.page-info span.col-orange { color:#e47234; font-weight:bold;}
+span.notice {color:#F60; font-weight:bold;}
+span.notice-sub {font-weight:bold;}
+
+div.paginate{margin:0 auto;text-align:center;font-family: NanumGothic,'NanumGothicWeb', dotum, Sans-Serif;height:40px;}
+div.paginate span {padding:4px 8px; margin:0px;}
+div.paginate a {margin:0;padding:0;vertical-align:middle;}
+div.paginate strong span{background:#999; color:#fff}
+div.paginate a.prevmore img,
+div.paginate a.prev img{margin-top:-3px; margin-left:-3px; vertical-align:middle;}
+div.paginate a.nextmore img,
+div.paginate a.next img{margin-top:-3px; margin-right:-3px; vertical-align:middle;}
+
+
+
+/* ------------------------------
+보기
+------------------------------ */
+div.bbs-view { border-top: solid 2px #a5a5a5; border-bottom:1px solid #a5a5a5; }
+div.bbs-view table { text-align:left;}
+div.bbs-view table th, 
+div.bbs-view table td { padding-left:10px; padding-right:10px; }
+div.bbs-view table th { padding-left:17px; background:url('/images/egovframework/fund//bbs/bg_th_vline.gif') no-repeat 100% 50%; }
+div.bbs-view table th.subject { font-size:12px; }
+div.bbs-view table td.subject { font-size:12px; font-weight:bold;}
+div.bbs-view table td.date { text-align:right;}
+div.bbs-view div.core { padding:10px; line-height:1.5;}
+
+/* ------------------------------
+쓰기
+------------------------------ */
+div.bbs-write { border-top: solid 2px #a5a5a5; border-bottom: solid 1px #d5d5d5; }
+div.bbs-write div.addr { padding: 2px 0; }
+div.bbs-write span { padding-right: 5px; }
+div.bbs-write table { text-align:left; }
+div.bbs-write table th, 
+div.bbs-write table td { padding:4px 10px; }
+div.bbs-write table th { background:url('/images/egovframework/fund//bbs/bg_th_vline.gif') no-repeat 100% 50%;}
+div.bbs-write table th span { display:block; padding-left:12px; background:url('/images/egovframework/fund//bbs/icon_write.gif') no-repeat 0 50%;}
+div.bbs-write table td { padding-left:10px; padding-right:10px;}
+div.bbs-write table tr.writer input.input-txt { background:#f7f7f7}
+div.bbs-write div.core { padding:5px 10px;}
+div.bbs-write div.core textarea { width: 98%; height: 200px; text-align: left; }
+
+
+/* ------------------------------
+Button
+------------------------------ */
+div.buttons { margin-top:5px; margin-bottom:24px; text-align:right; }
+div.buttons a.f-left { margin-right:4px;}
+div.buttons a.f-right { margin-left:4px;}
+div.buttons a.type-a { display:inline-block; font-size:11px; background:#999;}
+div.buttons a.type-a span { display:inline-block; cursor:pointer; padding:0 16px 0 16px; height:22px; line-height:22px; color:#fff; background:background:#999;}
+div.buttons a.btn { display:inline-block; font-family:NanumGothic, 'NanumGothicWeb'; font-size:11px; }
+div.buttons a.btn span { display:inline-block; cursor:pointer; height:26px; line-height:26px; padding:0 16px 0 16px; }
+div.buttons a.type-b { background:#196939;}
+div.buttons a.type-b span { color:#fff; background:url('/images/egovframework/fund//common/btn_type_b_right.gif') no-repeat 100% 0;}
+div.buttons a.type-c {  background:#555;}
+div.buttons a.type-c span { color:#fff; background:url('/images/egovframework/fund//common/btn_type_c_right.gif') no-repeat 100% 0;}
+div.buttons a.type-d {background:#ddd;}
+div.buttons a.type-d span { color:#686868; background:url('/images/egovframework/fund//common/btn_type_d_right.gif') no-repeat 100% 0;}
+
+/* ------------------------------
+가격 
+------------------------------ */
+span#prise-total { border: 3px solid #1e5921;  padding: 2px 15px; background: #196939;  color: white; font-size: 15px; }
+
+/* float clear 
+div.buttons {*zoom:1;} */
+div.buttons:after {content:" "; clear:both;} 
+/* div.buttons:after {content:" "; display:block; clear:both;} */
+
+
+/* ------------------------------
+댓글 폼
+------------------------------ */
+fieldset.bbs-comment-form { margin-top:28px; padding:9px 0 14px 0; border-top:2px solid #a5a5a5; border-bottom:1px solid #e2e2e2; }
+fieldset.bbs-comment-form * { vertical-align:middle}
+fieldset.bbs-comment-form textarea.textarea, fieldset.bbs-comment-form input.name-tmp { padding-left: 3px; background: #f7f7f7; width:660px; }
+fieldset.bbs-comment-form input.name-tmp { width: 50px;  }
+fieldset.bbs-comment-form input.btn-comment {}
+span.memo-care { font-weight: bold; color: #0b6425; }
+
+/* ------------------------------
+댓글 목록
+------------------------------ */
+ul.bbs-comment-list { padding:0; margin:0; width: 100%; border-bottom:1px solid #e2e2e2;}
+ul.bbs-comment-list * { margin:0; padding:0}
+ul.bbs-comment-list img { vertical-align:middle;}
+ul.bbs-comment-list li { list-style:none; margin:0; padding:11px 0 11px 37px; border-bottom:1px dashed #e2e2e2; background-repeat:no-repeat; background-position:9px 13px; }
+ul.bbs-comment-list li.comment { background-image:url('/images/egovframework/fund//bbs/icon_comment.gif');}
+ul.bbs-comment-list li.reply { background-image:url('/images/egovframework/fund//bbs/icon_comment_reply.gif');}
+ul.bbs-comment-list li span.writer { color:#555; font-weight:bold;}
+ul.bbs-comment-list li span.date { color:#979797; font-size:11px;}
+ul.bbs-comment-list li p.cont { color:#565656;}
+
+/* ------------------------------
+이전 다음 글
+------------------------------ */
+table.bbs-prevnext { margin-top: 40px; width: 100%; border-top: solid 2px #a5a5a5; border-bottom:1px solid #d5d5d5; }
+table.bbs-prevnext th,
+table.bbs-prevnext td { padding:7px 10px; border-bottom: solid 1px #e4e4e3; vertical-align: middle; }
+table.bbs-prevnext td { }
+table.bbs-prevnext th { font-size:11px; padding-right:15px; font-weight:normal; background:url('/images/egovframework/fund//bbs/bg_th_vline.gif') no-repeat 100% 50%; }
+table.bbs-prevnext th span { display: block; background: url('/images/egovframework/fund//bbs/icon_arrow_down.gif') right center no-repeat; white-space: nowrap; cursor: default; }
+table.bbs-prevnext tr.prev th span { background-image: url('/images/egovframework/fund//bbs/icon_arrow_up.gif') }
+table.bbs-prevnext tr.next th, 
+table.bbs-prevnext tr.next td { border-bottom:0 none}
+table.bbs-prevnext a { color:#4d4e53}
+
+/* ------------------------------
+게시판 검색
+------------------------------ */
+div.bbs-search {width:260px; padding:0px 0 8px; text-align: center; float:right;font-family: NanumGothic,'NanumGothicWeb', dotum, Sans-Serif;}
+div.bbs-search *{ vertical-align: middle;}
+div.bbs-search input.input-txt { width:100px; padding:2px; background:#efefef;}
+div.bbs-search select{ width:100px; margin:0 5px;padding:3px; height:24px;}
+div.bbs-search label.txt-label{ font-size:11px; }
+div.bbs-search .btn { margin-left:-5px;}
+div.bbs-search label  { border:1px solid red; display: none;  }
+
+
+/* ------------------------------
+FAQ
+------------------------------ */
+table.faq {  }
+table.faq tr.current td,
+table.faq tr.current td a { color: #008da8; font-weight: bold; }
+table.faq tr.toggle td { padding: 20px 0 25px; background-color: #f2f2f2; color: #161616; }
+table.faq tr.toggle td.first-child { text-align: left; }
+table.faq tr.toggle td.first-child img { margin-left: 79px; }
+table.faq tr.toggle td.last-child  { font-size: 95%; text-align: left; }
+
+div.faq-list { border-top:1px solid #97060e; margin-bottom:33px;}
+div.faq-list h5.q { margin:0; padding:0; font-size:12px; line-height:38px; border-bottom:1px solid #d1d1d1; background:url('/images/egovframework/fund//helper/faq_q_bg.gif') repeat-x 0 0;}
+div.faq-list h5.q * { vertical-align:middle;}
+div.faq-list h5.q a.question { display:inline-block; padding-left:51px; height:39px; background:url('/images/egovframework/fund//common/icon_question.gif') no-repeat 11px 8px; color:#4d4e53; }
+div.faq-list h5.q a:hover { text-decoration:none;}
+div.faq-list h5.q span { }
+div.faq-list div.a { margin:0; padding:12px 10px 12px 51px; color:#a4a4a4; border-bottom:1px solid #d1d1d1; background:#f8f8f8 url('/images/egovframework/fund//common/icon_answer.gif') no-repeat 11px 50%}
+div.faq-list h5.current { color: #008da8; font-weight: bold; background:#f8f8f8;  }
+
+
+/* ------------------------------
+Title
+------------------------------ */
+h5.bbs-title { margin:0px; padding:0; font-size:12px; color:#666; font-weight:bold;}
+ul.bbs-dot-gray { margin: 0; padding: 10px 10px 5px 10px; list-style:none;  background:url('/images/egovframework/fund//common/bul_arrow_green.gif') no-repeat 0 14px; font-weight:bold; }
+ul.bbs-dot-gray span { font-weight:normal;  }
+
+
+.disnone { display: none; }
+.disblock { display: block; }
+
+
+/* ------------------------------
+텍스트     
+------------------------------ */
+span.blod-blue { font-weight:bold;   color: blue;}
+span.blod-green { font-weight:bold;  color: #003300;}
+span.blod-green1 {  color: #003300;}
+input.link-form { color: #0033cc; width:320px; border:solid 0px black; text-align:left; background: white;  cursor:pointer; }
+span.font-blue { color: blue;}
+span.font-red { color: red;}
+span.font-yellow { color: #ffff00;}
+span.font-336 { color: #249218;}
+span.font-2 { color: #b136c7;}
+span.paytype {   display: inline-block;  width: 110px;  float: left;}
+span.paytype2 {  display: inline-block;  width: 400px;  padding-left: 10px; }
+
+/* ------------------------------
+input 사이즈
+------------------------------ */
+input.w30 { width: 30px; } 
+input.w40 { width: 40px; } 
+input.w70 { width: 70px; } 
+input.w90 { width: 90px; } 
+input.w100 { width: 100px; } 
+input.w150 { width: 150px; } 
+input.w200 { width: 200px; } 
+input.w450 { width: 450px; }
+
+div.line-print { width: 100%;height:4px; font-size:4px; line-height:4px;  background: #096f09; }
+
+/* ------------------------------
+검색
+------------------------------ */
+div.box-a { width:710px;border:1px solid #cfd8e2; background-color:#f3f3f3; padding:15px 15px 5px 15px;  color:#6c6c6c; }
+div.box-a span {line-height:35px; margin-right:20px;}
+div.box-a span.mleft {line-height:35px; margin-left:30px;}
+div.box-a span.last {line-height:35px; margin-right:0;}
+div.box-a span select {border:1px solid #fff; background: #ffffff; outline:1px solid #bababa;height:23px; color:#8b8b8b; font-size:12px; padding:0 0 1px 2px; }
+div.box-a label {margin-right:5px;  font-weight:bold;}
+div.box-a input {height:23px; line-height:23px; border:1px solid #bababa; color:#8b8b8b;}
+div.box-a ul li span {line-height:17px; width:50px;  display:inline-block; text-align:center;}
+
+div.box-b { width:710px;border:1px solid #aac2d1; background-color:#f8fcff; padding:15px 15px 13px 15px; color:#6c6c6c; margin:-10px 0 15px; }
+div.box-b label {font-size:12px; color:#6c6c6c; font-weight:bold;}
+div.box-b input {height:25px; line-height:25px; border:1px solid #bababa; width:570px;}
+
+div.box-a div.col-a {position: relative; float:left; width:33%; border:1px solid #e6e6dc; text-align:center; }
+div.box-a div.col-a p {margin:0; padding:5px 17px 5px 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;}
+
+div.box-a div.col-b {position: relative; float:left;  border:1px solid #e6e6dc; text-align:center; }
+div.box-a div.boxsize1 { width: 165px; } 
+div.box-a div.boxsize2 { width: 200px;  }
+div.box-a div.boxsize3 { width: 330px; }
+div.box-a div.col-b p {margin:0; padding:5px 17px 5px 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;}
+
+div.box-e { width:710px;border:1px solid #cfd8e2; background-color:#f3f3f3; padding:15px 15px 13px 15px;  color:#6c6c6c; }
+div.box-e span {line-height:35px; margin-right:12px;}
+div.box-e span.mleft {line-height:35px; margin-left:30px;}
+div.box-e span.last {line-height:35px; margin-right:0;}
+div.box-e span select {border:1px solid #fff; background: #ffffff; outline:1px solid #bababa;height:23px; color:#8b8b8b; font-size:12px; padding:0 0 1px 2px; }
+div.box-e label {margin-right:5px;  font-weight:bold;}
+div.box-e input {height:23px; line-height:23px; border:1px solid #bababa; color:#8b8b8b;}
+
+div.box-e div.col-a {position: relative; float:left; width:33%; border:1px solid #e6e6dc; text-align:center; }
+div.box-e div.col-a p {margin:0; padding:5px 17px 5px 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;}
+
+div.box-c {  width:680px;/*border:1px solid #cfd8e2; background-color:#f3f3f3;*/  }
+div.box-c div.col-a {position: relative; float:left; width:660px; border:1px solid #e6e6dc; text-align:center; margin:10px;}
+/*수치조정해주세요*/
+div.box-c div.col-a ul.title {margin:0; padding:0;}
+div.box-c div.col-a ul.title li {line-height:30px; list-style:none; float:left; width:525px; padding:5px 0 0 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;  display:inline-block; }
+div.box-c div.col-a ul.title li.first {width:100px; border-right:1px solid #e6e6dc; padding:5px 0 0 23px;  text-align:center;  }
+
+div.box-c ul li span {line-height:17px; width:130px;  display:inline-block; text-align:center;}   
+/*수치조정해주세요 패딩이랑 width값요*/
+
+div.box-c div.col-a p {margin:0; padding:5px 17px 5px 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;}
+div.box-c div.col-a p span {width:50px;  display:inline-block; text-align:center; margin:0; padding:5px 17px 5px 0;  font-weight:bold;}
+div.box-c div.col-b {position: relative; float:left;  width:64%;  border:1px solid #e6e6dc; text-align:center; }
+div.box-c div.col-b p {margin:0; padding:5px 17px 5px 0; border-bottom:1px solid #e6e6dc;  font-weight:bold;}
+
+div.box-d { width:680px;border:1px solid #cfd8e2; background-color:#f3f3f3; padding:10px 15px 10px 15px;  color:#6c6c6c; }
+div.box-d span {line-height:35px; margin-right:20px;}
+div.box-d span.mleft {line-height:35px; margin-left:30px;}
+div.box-d span.last {line-height:35px; margin-right:0;}
+div.box-d span select {border:1px solid #fff; background: #ffffff; outline:1px solid #bababa;height:23px; color:#8b8b8b; font-size:12px; padding:0 0 1px 2px; }
+div.box-d label {margin-right:5px;  font-weight:bold;}
+div.box-d input {height:23px; line-height:23px; border:1px solid #bababa; color:#8b8b8b;}
+
+div.box-b2 { width:680px;border:1px solid #d2afb1; background-color:#ffeae7; padding:10px 15px 10px 15px; color:#6c6c6c; margin:10px 0; }
+div.box-b2 span {line-height:35px; margin-right:20px;}
+div.box-b2 label {font-size:12px; color:#6c6c6c; font-weight:bold;}
+div.box-b2 input {height:25px; line-height:25px; border:1px solid #bababa; }
+div.box-b2 span.last {line-height:25px; margin-right:0;}
+
+div.box-no { width:100%;border:0px solid #cfd8e2; /*background-color:#f3f3f3;*/ padding:15px 0px 13px 0px;  color:#6c6c6c; }
+div.box-no span {line-height:35px; margin-right:20px;}
+div.box-no span.mleft {line-height:35px; margin-left:30px;}
+div.box-no span.last {line-height:35px; margin-right:0;}
+div.box-no span select {border:1px solid #fff; background: #ffffff; outline:1px solid #bababa;height:23px; color:#8b8b8b; font-size:12px; padding:0 0 1px 2px; }
+div.box-no label {margin-right:5px;  font-weight:bold;}
+div.box-no input.txt {height:23px; line-height:23px; border:1px solid #bababa; color:#8b8b8b;}
+div.box-no input.file {height:23px; line-height:23px; border:1px solid #bababa; color:#8b8b8b;}
+
+div.box-scroll { overflow-y:scroll;height: 340px; width:100%; background-color:#fff; }
+div.box-scroll ul.list-scroll { margin:0; padding:0; width:100%; }
+div.box-scroll ul.list-scroll li { list-style:none; font-style:normal; padding: 0px 0;  text-align:left; padding-left:10px;}
+div.box-scroll ul.list-scroll li a:hover { text-decoration: none;  color:#00629c; }
+div.box-scroll ul.list-scroll li.on { background-color:#6c6c6c; color:#00629c;}
+div.box-scroll ul.list-scroll li.on { color:#fff; }
+div.box-scroll ul.list-scroll li.on a { color:#fff;  color: white;}
+ul#cate1 { width: 145px; }
+ul#cate2 { width: 200px; }
+ul#cate2  li { letter-spacing:-1px;   }
+ul#cate3 { width: 325px; }
+
+/* 선택박스*/
+ ul,ol,li,dl,dt,dd,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0}
+
+.uio_smf{position:relative;width:100%;margin:0 0 20px;}
+.uio_smf:after{display:block;clear:both;content:''}
+
+.uio_smf .fd_area{position:relative; border-left:1px solid #dddde1}
+.uio_smf .type_lst {overflow:hidden;position:relative;height:145px }
+.uio_smf .type_lst dt {position:absolute;width:20%;background:url('/images/egovframework/fund/common/sp_bar_v3.png') no-repeat 100% -74px;line-height:14px;font-weight:normal}
+.uio_smf .type_lst dt a{display:block;height:11px;padding:9px 40px 10px 11px;border:1px solid;border-color:#dddde1 #eaebec #f1f1f2 #fff;border-left:none;color:#565960;text-decoration:none;cursor:hand}
+
+.uio_smf .type_lst dt .txt_over{display:block}
+.uio_smf .type_lst dd {overflow:auto;overflow-x:hidden;overflow-y:scroll;position:absolute;z-index:10;width:20%;height:110px;margin-top:31px;padding:3px 0 0;border-bottom:1px solid #dddde1}
+
+.uio_smf .type_lst .area{top:0;left:0%;}
+.uio_smf .type_lst .area2{top:0;left:20%}
+.uio_smf .type_lst .area3{top:0;left:40%}
+.uio_smf .type_lst .area4{top:0;left:60%}
+.uio_smf .type_lst .area5{top:0;left:80%;}
+
+.txt_over{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sico_dic {display:inline-block;overflow:hidden;width:13px;height:13px;padding:1px;background:url('/images/egovframework/fund/common/sp_ico2_v13.png') no-repeat -211px -264px;line-height:1000px;vertical-align:middle;cursor:pointer}
+.uio_smf .type_lst ul {list-style: none;}
+.uio_smf .type_lst li {padding:0; margin:0;}
+.uio_smf .type_lst li {overflow:hidden;position:relative;line-height:0;font-size:0;color:#727682; list-style:none;}
+.uio_smf .type_lst li span{display:block;overflow:hidden;height:18px;padding-left:11px;line-height:19px;font-size:11px;white-space:nowrap;cursor:pointer}
+.uio_smf .type_lst li .on{background:#f9f9f9;font-weight:bold;color:#565960;letter-spacing:-1px}
+.uio_smf .type_lst li input{position:absolute;top:0;right:0;margin:0;width:13px;height:13px;padding:2px}
+.uio_smf .type_lst li .input_box{display:block;position:absolute;top:0;right:0;width:15px;height:15px;padding:0;background:#fff;cursor:pointer}
+.uio_smf .type_lst li .on .input_box{background:#f9f9f9 url('/images/egovframework/fund/common/sp_ico_v18.png') no-repeat 100% -2334px}
+.uio_smf .type_lst li label{display:block;width:80%;height:16px;cursor:pointer}
+.uio_smf .type_lst li .sico_dic{position:absolute;top:1px;right:17px}
+.uio_smf .type_lst dt a.sico_dic{position:absolute;top:8px;right:21px;height:13px;padding:1px;border:0;background:url('/images/egovframework/fund/common/sp_ico2_v13.png') no-repeat -211px -264px}
+
+@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.uio_smf .type_lst li input{width:13px;height:13px;padding:2px}
+
+
+/* 비밀번호 변경  */
+div.section-greenbox { padding: 20px 15px; border: 4px solid #007947;  }
+
+
+

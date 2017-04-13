@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* 공통 */
+@import url('basic.css'); /* Fuz 기본 */
+@import url('device.css'); /* 장치별 분기 */
+@import url('module.css'); /* 기타 모듈 */
+@import url('popup.css'); /* 팝업 */
+@import url('bbs.css'); /* 게시판 */
+@import url('common.css'); /* 사이트 공통 */
+
+/* 템플릿별 추가 */
+@import url('sub.css'); /* 서브페이지 레이아웃 */
+@import url('custom.css'); /* 변형 */

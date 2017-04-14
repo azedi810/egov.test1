@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="EUC-KR" ?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="OntoStatisticSumSql">
+	
+	<!-- 통계현황 헤더 부분 시작-->	
+	<resultMap id="ResultOntoStatisticSumList" class="outmap">
+		<result property="RNUM" column="RNUM"/>
+		<result property="SYS_DATE" column="SYS_DATE"/>
+		<result property="START_DATE" column="START_DATE"/>
+		<result property="END_DATE" column="END_DATE"/>
+		<result property="SCORE_1_PASS" column="SCORE_1_PASS"/>
+		<result property="SCORE_1_FAIL" column="SCORE_1_FAIL"/>
+		<result property="SCORE_1_CORRECT" column="SCORE_1_CORRECT"/>
+		<result property="SCORE_5_PASS" column="SCORE_5_PASS"/>
+		<result property="SCORE_5_FAIL" column="SCORE_5_FAIL"/>
+		<result property="SCORE_5_CORRECT" column="SCORE_5_CORRECT"/>
+		<result property="SCORE_10_PASS" column="SCORE_10_PASS"/>
+		<result property="SCORE_10_FAIL" column="SCORE_10_FAIL"/>
+		<result property="SCORE_10_CORRECT" column="SCORE_10_CORRECT"/>				
+		<result property="TOTAL_COUNT" column="TOTAL_COUNT"/>
+	</resultMap>
+	
+	<!-- Chart -->
+	<resultMap id="ResultOntoStatisticSumChartList" class="outmap">
+		<result property="SYS_DATE" column="SYS_DATE"/>
+		<result property="SCORE_1_PASS" column="SCORE_1_PASS"/>
+		<result property="SCORE_1_FAIL" column="SCORE_1_FAIL"/>
+		<result property="SCORE_1_CORRECT" column="SCORE_1_CORRECT"/>
+		<result property="SCORE_5_PASS" column="SCORE_5_PASS"/>
+		<result property="SCORE_5_FAIL" column="SCORE_5_FAIL"/>
+		<result property="SCORE_5_CORRECT" column="SCORE_5_CORRECT"/>
+		<result property="SCORE_10_PASS" column="SCORE_10_PASS"/>
+		<result property="SCORE_10_FAIL" column="SCORE_10_FAIL"/>
+		<result property="SCORE_10_CORRECT" column="SCORE_10_CORRECT"/>
+		<result property="TOTAL_COUNT" column="TOTAL_COUNT"/>
+	</resultMap>	
+	<!-- 통계현황 헤더 부분 끝-->
+		 
+	
+	<!-- Excel -->
+	<select id="getCount" resultClass="java.lang.Integer">
+			select count(1) from dual
+	</select>		
+	
+</sqlMap>

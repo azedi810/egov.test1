@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig
+        PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+    <settings
+        useStatementNamespaces="true"
+        lazyLoadingEnabled="true"
+        enhancementEnabled="true"
+        maxSessions="20"
+        />
+ 
+    <transactionManager type="JDBC" commitRequired="false">
+        <dataSource type="SIMPLE">
+ 
+            <property name="SetAutoCommitAllowed" value="false"/>
+            <property name="DefaultAutoCommit" value="false"/>
+             
+            <property name="JDBC.Driver" value="com.mysql.jdbc.Driver"/>
+            <property name="JDBC.ConnectionURL" value="jdbc:mysql://localhost/itjs"/>
+            <property name="JDBC.Username" value="itjs"/>
+            <property name="JDBC.Password" value="itjs123"/>
+    
+        </dataSource>
+    </transactionManager>
+ 
+ 
+    <sqlMap resource="config/sql/MyLottoSql.xml"/>
+ 
+</sqlMapConfig>
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="EUC-KR"?>
+
+<!DOCTYPE sqlMapConfig
+        PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+<settings useStatementNamespaces="true"
+                cacheModelsEnabled="true"/>
+
+    <typeAlias type="java.util.HashMap" alias="hmap"/>
+    <typeAlias type="com.skcc.component.format.InFormattedMap" alias="inmap"/>
+    <typeAlias type="com.skcc.component.format.OutFormattedMap" alias="outmap"/>
+<!--
+    <typeAlias type="com.skcc.component.code.internal.Code" alias="code"/>
+    <typeAlias type="com.skcc.component.code.internal.CodeTypeHandler" alias="codeType"/>
+-->
+	<typeAlias alias="ClobHandler" type="gov.paid.common.framework.OracleClobHandler"/>
+
+	<typeHandler javaType="java.lang.String" jdbcType="java.sql.Clob" callback="ClobHandler"/>
+<!--
+    <typeHandler callback="codeType" javaType="java.lang.String" jdbcType="java.lang.String" />
+-->
+
+
+    <transactionManager type="EXTERNAL">
+        <dataSource type="JNDI">
+            <property name="DataSource" value="jdbc/DefaultDS"/>
+        </dataSource>
+    </transactionManager>
+
+<!-- ************************** -->
+<!-- *     Framework Maps     * -->
+<!-- ************************** -->
+ 
+
+<!-- ******************************** -->
+<!-- *         PC ( 부처 : BONG )     * -->
+<!-- ******************************** -->
+
+	<sqlMap resource="config/sql/OntoStatisticSumSql.xml" />
+	
+</sqlMapConfig>

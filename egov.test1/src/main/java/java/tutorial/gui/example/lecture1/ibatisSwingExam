@@ -1,0 +1,260 @@
+<<JAVA Frame>>
+package pm.client;
+
+import java.io.Reader;
+import java.util.List;
+import javax.swing.JOptionPane;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import pm.MemberVO;
+ 
+public class MyFrame extends javax.swing.JFrame {
+    SqlSessionFactory factory; 
+    SqlSession ss;
+    Reader r;
+    public MyFrame() {
+        initComponents();
+        try {
+            
+       // 1) 환경설정 파일과 연결된 스트리 생성
+        r = Resources.getResourceAsReader(
+                "pm/conf/conf.xml");
+        
+        // 2) 연결된 파일로 부터 정보를 인식 - factory생성
+        factory = 
+                new SqlSessionFactoryBuilder().build(r);
+        
+        // 3) 앞서 생성된 factory를 이용하여 SqlSession생성
+        ss = factory.openSession();
+         
+        } catch (Exception e) {
+        }
+    }
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">
+    private void initComponents() {
+        jScrollPane1 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        area.setColumns(20);
+        area.setRows(5);
+        jScrollPane1.setViewportView(area);
+        jMenu1.setText("파 일");
+        jMenuItem1.setText("전 체");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+        jMenuItem2.setText("검 색");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem2);
+        jMenu1.add(jSeparator1);
+        jMenuItem3.setText("종 료");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+        jMenuBar1.add(jMenu1);
+        setJMenuBar(jMenuBar1);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+        );
+        pack();
+    }// </editor-fold>
+ 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {
+        // 전체 메뉴아이템을 클릭했을 경우
+        
+        area.setText("");
+        List<MemberVO> m_list = ss.selectList("all");
+        for(MemberVO mvo : m_list)
+        area.append(mvo.getM_id()+"/"+mvo.getM_name()+"\r\n");
+        
+       
+        
+    }
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // 검색메뉴를 선택했을경우
+        area.setText("");
+        String str = JOptionPane.showInputDialog("검색");
+        List<MemberVO> a_list = ss.selectList("search","%"+str+"%");
+        
+        for(MemberVO mvo : a_list)
+            area.append(mvo.getM_id()+"/"+mvo.getM_name()+"\r\n");
+        
+       
+    }
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {
+        // 종료메뉴 클릭시
+        System.exit(0);
+        ss.close();
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        
+        
+       
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MyFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MyFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MyFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MyFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MyFrame().setVisible(true);
+            }
+        });
+    }
+    // Variables declaration - do not modify
+    private javax.swing.JTextArea area;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    // End of variables declaration
+}
+=================================================================
+<<환경설정 XML>>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <environments default="">
+        <environment id="">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" 
+                          value="oracle.jdbc.OracleDriver"/>
+                <property name="url" 
+                          value="jdbc:oracle:thin:@localhost:1521:xe"/>
+                <property name="username" value="hr"/>
+                <property name="password" value="1111"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="pm/mapper/member.xml"/>
+    </mappers>
+</configuration>
+ 
+====<<참고 mybatis PDF파일>>2페이지
+ 
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<environments default="development">
+<environment id="development">
+<transactionManager type="JDBC"/>
+<dataSource type="POOLED">
+<property name="driver" value="${driver}"/>
+<property name="url" value="${url}"/>
+<property name="username" value="${username}"/>
+<property name="password" value="${password}"/>
+</dataSource>
+</environment>
+</environments>
+<mappers>
+<mapper resource="org/mybatis/example/BlogMapper.xml"/>
+</mappers>
+</configuration>
+==================================================================
+<<member.xml 파일부분>>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="">
+    <select id="all" resultType="pm.MemberVO">
+        select * from members
+    </select>
+    <select id="search" resultType="pm.MemberVO" parameterType="String">
+        select *from members
+        where m_id like #{no} or m_name like #{no}
+    </select>
+</mapper>
+ 
+===<참고 mybatis PDF파일> 4페이지
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.example.BlogMapper">
+<select id="selectBlog" parameterType="int" resultType="Blog">
+select * from Blog where id = #{id}
+</select>
+</mapper>
+ 
+===============================================================
+<<MemberVO.java -getter/setter>>만들기
+package pm;
+public class MemberVO {
+    private String m_id, m_pwd, m_name;
+    public String getM_id() {
+        return m_id;
+    }
+    public void setM_id(String m_id) {
+        this.m_id = m_id;
+    }
+    public String getM_pwd() {
+        return m_pwd;
+    }
+    public void setM_pwd(String m_pwd) {
+        this.m_pwd = m_pwd;
+    }
+    public String getM_name() {
+        return m_name;
+    }
+    public void setM_name(String m_name) {
+        this.m_name = m_name;
+    }
+    
+    
+}
